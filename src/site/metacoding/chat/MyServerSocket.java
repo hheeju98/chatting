@@ -32,7 +32,6 @@ public class MyServerSocket {
             sc = new Scanner(System.in);
             writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
-            // 1. 이 부분 추가 (서버 소켓쪽)
             new Thread(() -> {
                 while (true) {
                     try {
@@ -52,9 +51,13 @@ public class MyServerSocket {
             }
 
         } catch (Exception e) {
-            System.out.println("통신 오류 발생 : " + e.getMessage());
+            System.out.println("오류내용 : " + e.getMessage());
             // e.printStackTrace();
         }
+    }
+
+    public void run() {
+
     }
 
     public static void main(String[] args) {
